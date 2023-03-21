@@ -6,9 +6,7 @@ public class MyStack {
     public void push(Object value) {
         Object[] buff = objects;
         objects = new Object[objects.length + 1];
-        for (int i = 0; i < objects.length - 1; i++) {
-            objects[i] = buff[i];
-        }
+        System.arraycopy(buff, 0, objects, 0, objects.length - 1);
         objects[objects.length-1] = value;
     }
 

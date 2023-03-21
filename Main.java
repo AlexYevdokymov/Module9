@@ -3,6 +3,12 @@ package org.example;
 public class Main {
     public static void main(String[] args) {
 
+        MyQueue myQueue = new MyQueue();
+        myQueue.add(3422);
+        myQueue.add("Asfasahry");
+        System.out.println(myQueue.poll());
+        System.out.println(myQueue.poll());
+
         MyStack myStack = new MyStack();
         System.out.println(myStack.size());
         myStack.push("Hello");
