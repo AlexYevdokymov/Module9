@@ -1,43 +1,48 @@
 package org.example;
 
-public class MyArrayList {
-    private Object[] objects;
-    public MyArrayList(Object [] objects) {
-        this.objects = objects;
-    }
+public class MyArrayList<T> {
+    private Object[] elements;
+    private int listSize;
 
-    public Object get(int index) {
-        return objects[index];
+    public MyArrayList() {
+        elements = new Object[10];
     }
-
-    public int size() {
-        return objects.length;
-    }
-    public void clear() {
-        objects = new Object[0];
-    }
-
-    public void add(Object value) {
-        Object[] buffer;
-        buffer = objects;
-        objects = new Object[objects.length + 1];
-        int i = 0;
-        for(Object buff : buffer) {
-            objects[i] = buff;
-            i++;
+    public void add(T value) {
+        if(listSize == elements.length) {
+            int newSize = elements.length + Math.round(1.5f * elements.length);
+            Object[] newElements = new Object[newSize];
+            System.arraycopy(elements, 0, newElements, 0, elements.length);
+            elements = newElements;
         }
-        objects[objects.length - 1] = value;
+        elements[listSize] = value;
+        listSize++;
     }
+    public int size() {
+        return listSize;
+    }
+
+    public T get(int index) {
+        return (T) elements[index];
+    }
+
+
+    public void clear() {
+        elements = new Object[0];
+        listSize = 0;
+    }
+
+
 
     public void remove(int index) {
         Object[] buffer;
-        buffer = objects;
-        objects = new Object[buffer.length - 1];
+        buffer = elements;
+        elements = new Object[buffer.length - 1];
         for(int i = 0, j = 0; i < buffer.length; i++) {
             if(i != index) {
-                objects[j] = buffer[i];
+                elements[j] = buffer[i];
                 j++;
             }
         }
+        listSize--;
     }
 }
