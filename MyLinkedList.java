@@ -61,7 +61,7 @@ public class MyLinkedList<T> {
     }
 
     public void clear() {
-        head = new Node<>();
-        last = new Node<>();
+        head = null;
+        last = null;
     }
 }

@@ -61,5 +61,7 @@ public class Main {
         myLinkedList.remove(3);
         System.out.println("myLinkedList.get(2) = " + myLinkedList.get(2));
         System.out.println("myLinkedList.get(3) = " + myLinkedList.get(3));
+        myLinkedList.clear();
+        System.out.println("myLinkedList.size() = " + myLinkedList.size());
     }
 }
