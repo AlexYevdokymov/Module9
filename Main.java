@@ -1,16 +1,26 @@
 package org.example;
 
-import java.util.LinkedList;
-import java.util.List;
-
 public class Main {
     public static void main(String[] args) {
-//        List<String> linkedList = new LinkedList<>();
-//        MyQueue myQueue = new MyQueue();
-//        myQueue.add(3422);
-//        myQueue.add("Asfasahry");
-//        System.out.println(myQueue.poll());
-//        System.out.println(myQueue.poll());
+        ////////////// MyQueue testing
+        MyQueue<Integer> myQueue = new MyQueue<>();
+        System.out.println("myQueue.size() = " + myQueue.size());
+        myQueue.add(3422);
+        System.out.println("myQueue.size() = " + myQueue.size());
+        myQueue.add(65);
+        System.out.println("myQueue.size() = " + myQueue.size());
+        System.out.println(myQueue.poll());
+        System.out.println("myQueue.size() = " + myQueue.size());
+        System.out.println(myQueue.poll());
+        System.out.println("myQueue.size() = " + myQueue.size());
+        myQueue.add(1);
+        myQueue.add(3422);
+        myQueue.add(3422);
+        myQueue.add(3422);
+        System.out.println("myQueue.peek() = " + myQueue.peek());
+        System.out.println("myQueue.size() = " + myQueue.size());
+        myQueue.clear();
+        System.out.println("myQueue.size() = " + myQueue.size());
 //
 //        MyStack myStack = new MyStack();
 //        System.out.println(myStack.size());

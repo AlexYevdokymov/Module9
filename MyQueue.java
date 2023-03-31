@@ -1,9 +1,12 @@
 package org.example;
 
-public class MyQueue {
-    private Object[] objects = new Object[0];
+public class MyQueue<T> {
+    private Object[] objects;
 
-    public void add(Object value) {
+    public void add(T value) {
+        if(objects == null) {
+            objects = new Object[0];
+        }
         Object[] buff = objects;
         objects = new Object[objects.length + 1];
         System.arraycopy(buff, 0, objects, 0, objects.length - 1);
@@ -11,10 +14,11 @@ public class MyQueue {
     }
 
     public int size() {
+        if(objects == null) return 0;
         return objects.length;
     }
     public void clear() {
-        objects = new Object[0];
+        objects = null;
     }
     public void remove(int index) {
         Object[] buffer;
