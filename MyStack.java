@@ -11,10 +11,11 @@ public class MyStack {
     }
 
     public int size() {
+        if(objects == null) return 0;
         return objects.length;
     }
     public void clear() {
-        objects = new Object[0];
+        objects = null;
     }
     public void remove(int index) {
         Object[] buffer;
@@ -28,18 +29,16 @@ public class MyStack {
         }
     }
     public Object peek() {
-        return objects[0];
+        return objects[objects.length - 1];
     }
     public Object pop() {
-        Object resultPop = objects[0];
+        Object resultPop = objects[objects.length - 1];
         Object[] buffer;
         buffer = objects;
         objects = new Object[buffer.length - 1];
-        for(int i = 0, j = 0; i < buffer.length; i++) {
-            if(i != 0) {
-                objects[j] = buffer[i];
-                j++;
-            }
+        for(int i = 0, j = 0; i < buffer.length - 1; i++) {
+            objects[j] = buffer[i];
+            j++;
         }
         return resultPop;
     }

@@ -2,6 +2,21 @@ package org.example;
 
 public class Main {
     public static void main(String[] args) {
+
+        ////////////// MyStack testing
+        MyStack myStack = new MyStack();
+        System.out.println(myStack.size());
+        myStack.push("Hello");
+        myStack.push("Amazing");
+        myStack.push("World");
+        System.out.println(myStack.size());
+        System.out.println(myStack.peek());
+        System.out.println(myStack.pop());
+        System.out.println(myStack.pop());
+        System.out.println(myStack.pop());
+        System.out.println(myStack.size());
+        System.out.println();
+
         ////////////// MyQueue testing
         MyQueue<Integer> myQueue = new MyQueue<>();
         System.out.println("myQueue.size() = " + myQueue.size());
@@ -21,17 +36,6 @@ public class Main {
         System.out.println("myQueue.size() = " + myQueue.size());
         myQueue.clear();
         System.out.println("myQueue.size() = " + myQueue.size());
-//
-//        MyStack myStack = new MyStack();
-//        System.out.println(myStack.size());
-//        myStack.push("Hello");
-//        myStack.push("Hello");
-//        myStack.push("Hello");
-//        System.out.println(myStack.size());
-//        System.out.println(myStack.peek());
-//        System.out.println(myStack.pop());
-//        System.out.println(myStack.size());
-//        System.out.println();
 
         ////////////// MyArrayList testing
         MyArrayList<String> myArrayList = new MyArrayList<String>();
