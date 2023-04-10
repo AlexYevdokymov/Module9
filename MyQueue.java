@@ -35,7 +35,7 @@ public class MyQueue<T> {
         return objects[0];
     }
     public Object poll() {
-        Object resultPop = objects[0];
+        Object resultPoll = objects[0];
         Object[] buffer;
         buffer = objects;
         objects = new Object[buffer.length - 1];
@@ -45,6 +45,6 @@ public class MyQueue<T> {
                 j++;
             }
         }
-        return resultPop;
+        return resultPoll;
     }
 }
