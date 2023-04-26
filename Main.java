@@ -36,6 +36,8 @@ public class Main {
         System.out.println("myQueue.size() = " + myQueue.size());
         myQueue.clear();
         System.out.println("myQueue.size() = " + myQueue.size());
+        System.out.println();
+        System.out.println();
 
         ////////////// MyArrayList testing
         MyArrayList<String> myArrayList = new MyArrayList<String>();
@@ -46,14 +48,12 @@ public class Main {
         System.out.println("myArrayList.get(3) = " + myArrayList.get(3));
         System.out.println("myArrayList.get(0) = " + myArrayList.get(0));
         System.out.println("myArrayList.size() = " + myArrayList.size());
-        System.out.println();
         for(int i = 0; i < 120; i++) {
             myArrayList.add(String.valueOf(i));
         }
 
         System.out.println("myArrayList.get(56) = " + myArrayList.get(56));
         System.out.println("myArrayList.size() = " + myArrayList.size());
-        System.out.println();
         myArrayList.remove(2);
         System.out.println("myArrayList.size() = " + myArrayList.size());
         myArrayList.clear();
@@ -77,5 +77,22 @@ public class Main {
         System.out.println("myLinkedList.get(3) = " + myLinkedList.get(3));
         myLinkedList.clear();
         System.out.println("myLinkedList.size() = " + myLinkedList.size());
+        System.out.println();
+        System.out.println();
+
+        ////////////// MyHashMap testing
+        MyHashMap<String, String> myHashMap = new MyHashMap<>();
+        System.out.println("myHashMap.size() = " + myHashMap.size());
+        myHashMap.put("first", "First element of myHashMap");
+        System.out.println("myHashMap.size() = " + myHashMap.size());
+        myHashMap.put("second", "Second element of myHashMap");
+        System.out.println("myHashMap.size() = " + myHashMap.size());
+        System.out.println("myHashMap.get(\"second\") = " + myHashMap.get("second"));
+        System.out.println("myHashMap.get(\"fwf\") = " + myHashMap.get("fwf"));
+        myHashMap.remove("dfaf");
+        System.out.println("myHashMap.size() = " + myHashMap.size());
+        myHashMap.remove("second");
+        System.out.println("myHashMap.size() = " + myHashMap.size());
+        System.out.println("myHashMap.get(\"second\") = " + myHashMap.get("second"));
     }
 }

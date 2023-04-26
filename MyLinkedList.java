@@ -1,11 +1,7 @@
 package org.example;
 
-
-import javax.swing.plaf.nimbus.NimbusStyle;
-
 public class MyLinkedList<T> {
     private Node<T> head;
-    private Node<T> last;
     public void add(T item){
         Node<T> node = new Node<>();
         node.setValue(item);
@@ -62,7 +58,6 @@ public class MyLinkedList<T> {
 
     public void clear() {
         head = null;
-        last = null;
     }
 
     private static class Node<T> {
