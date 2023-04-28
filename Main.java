@@ -4,7 +4,7 @@ public class Main {
     public static void main(String[] args) {
 
         ////////////// MyStack testing
-        MyStack myStack = new MyStack();
+        MyStack<String> myStack = new MyStack<>();
         System.out.println(myStack.size());
         myStack.push("Hello");
         myStack.push("Amazing");

@@ -1,9 +1,9 @@
 package org.example;
 
-public class MyStack {
+public class MyStack<T> {
     private Object[] objects = new Object[0];
 
-    public void push(Object value) {
+    public void push(T value) {
         Object[] buff = objects;
         objects = new Object[objects.length + 1];
         System.arraycopy(buff, 0, objects, 0, objects.length - 1);
@@ -28,10 +28,10 @@ public class MyStack {
             }
         }
     }
-    public Object peek() {
-        return objects[objects.length - 1];
+    public T peek() {
+        return (T) objects[objects.length - 1];
     }
-    public Object pop() {
+    public T pop() {
         Object resultPop = objects[objects.length - 1];
         Object[] buffer;
         buffer = objects;
@@ -40,6 +40,6 @@ public class MyStack {
             objects[j] = buffer[i];
             j++;
         }
-        return resultPop;
+        return (T) resultPop;
     }
 }

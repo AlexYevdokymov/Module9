@@ -31,10 +31,10 @@ public class MyQueue<T> {
             }
         }
     }
-    public Object peek() {
-        return objects[0];
+    public T peek() {
+        return (T) objects[0];
     }
-    public Object poll() {
+    public T poll() {
         Object resultPoll = objects[0];
         Object[] buffer;
         buffer = objects;
@@ -45,6 +45,6 @@ public class MyQueue<T> {
                 j++;
             }
         }
-        return resultPoll;
+        return (T) resultPoll;
     }
 }
