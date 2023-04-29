@@ -31,16 +31,16 @@ public class MyArrayList<T> {
         listSize = 0;
     }
 
-
-
     public void remove(int index) {
-        Object[] buffer;
-        buffer = elements;
-        elements = new Object[buffer.length - 1];
-        for(int i = 0, j = 0; i < buffer.length; i++) {
-            if(i != index) {
-                elements[j] = buffer[i];
-                j++;
+        if (index >= listSize || index < 0) {
+            System.out.println("Can not remove an element with index out of bound");
+            return;
+        }
+        if (index == listSize - 1) {
+            elements[index] = null;
+        } else {
+            for (int i = index; i < listSize; i++) {
+                elements[i] = elements[i + 1];
             }
         }
         listSize--;

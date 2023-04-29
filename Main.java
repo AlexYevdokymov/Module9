@@ -5,16 +5,18 @@ public class Main {
 
         ////////////// MyStack testing
         MyStack<String> myStack = new MyStack<>();
-        System.out.println(myStack.size());
+        System.out.println("myStack.size() = " + myStack.size());
         myStack.push("Hello");
         myStack.push("Amazing");
         myStack.push("World");
-        System.out.println(myStack.size());
-        System.out.println(myStack.peek());
-        System.out.println(myStack.pop());
-        System.out.println(myStack.pop());
-        System.out.println(myStack.pop());
-        System.out.println(myStack.size());
+        System.out.println("myStack.size() = " + myStack.size());
+        myStack.remove(2);
+        System.out.println("myStack.size() = " + myStack.size());
+        myStack.remove(2);
+        System.out.println("myStack.size() = " + myStack.size());
+        System.out.println("myStack.peek() = " + myStack.peek());
+        System.out.println("myStack.pop() = " + myStack.pop());
+        System.out.println("myStack.pop() = " + myStack.pop());
         System.out.println();
 
         ////////////// MyQueue testing
@@ -24,9 +26,9 @@ public class Main {
         System.out.println("myQueue.size() = " + myQueue.size());
         myQueue.add(65);
         System.out.println("myQueue.size() = " + myQueue.size());
-        System.out.println(myQueue.poll());
+        System.out.println("myQueue.poll() = " + myQueue.poll());
         System.out.println("myQueue.size() = " + myQueue.size());
-        System.out.println(myQueue.poll());
+        System.out.println("myQueue.poll() = " + myQueue.poll());
         System.out.println("myQueue.size() = " + myQueue.size());
         myQueue.add(1);
         myQueue.add(3422);

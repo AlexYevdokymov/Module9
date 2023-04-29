@@ -1,50 +1,40 @@
 package org.example;
 
 public class MyQueue<T> {
-    private Object[] objects;
+    private Object[] objects = new Object[10];
+    private int queueSize = 0;
 
     public void add(T value) {
-        if(objects == null) {
-            objects = new Object[0];
+        if(queueSize == objects.length) {
+            int newSize = objects.length + Math.round(1.5f * objects.length);
+            Object[] newObjects = new Object[newSize];
+            System.arraycopy(objects, 0, newObjects, 0, objects.length);
+            objects = newObjects;
         }
-        Object[] buff = objects;
-        objects = new Object[objects.length + 1];
-        System.arraycopy(buff, 0, objects, 0, objects.length - 1);
-        objects[objects.length-1] = value;
+        objects[queueSize] = value;
+        queueSize++;
     }
 
     public int size() {
-        if(objects == null) return 0;
-        return objects.length;
+        return queueSize;
     }
     public void clear() {
         objects = null;
-    }
-    public void remove(int index) {
-        Object[] buffer;
-        buffer = objects;
-        objects = new Object[buffer.length - 1];
-        for(int i = 0, j = 0; i < buffer.length; i++) {
-            if(i != index) {
-                objects[j] = buffer[i];
-                j++;
-            }
-        }
+        queueSize = 0;
     }
     public T peek() {
         return (T) objects[0];
     }
     public T poll() {
         Object resultPoll = objects[0];
-        Object[] buffer;
-        buffer = objects;
-        objects = new Object[buffer.length - 1];
-        for(int i = 0, j = 0; i < buffer.length; i++) {
-            if(i != 0) {
-                objects[j] = buffer[i];
-                j++;
+        if (queueSize == 1) {
+            objects[0] = null;
+        } else {
+            for (int i = 0; i < queueSize; i++) {
+                objects[i] = objects[i + 1];
             }
         }
+        queueSize--;
         return (T) resultPoll;
     }
 }
